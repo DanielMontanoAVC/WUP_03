@@ -22,8 +22,15 @@ $H_0$ There is no difference between the alcohol consumed based on which row you
 
 $H_A$ There is a difference between the alcohol consumed based on which row you sit in.
 
+## Methods
 
-## Now with ggplot - first select the basic data
+The response variable is numerical and the explanatory variable is categorical. therefore we use numerical~cat. 
+
+## Results
+
+### Graphical results
+
+### Now with ggplot - first select the basic data
 
 ```{r}
 basicCN <- ggplot(davisdata,aes(y=alcohol,x=Seat))
@@ -34,12 +41,15 @@ basicCN <- ggplot(davisdata,aes(y=alcohol,x=Seat))
 basicCN + geom_boxplot()
 ```
   
+  The box plot shows that the back seats drink the most alcohol. Between the front and middle seats, there is very little diffrence
   
 ### get fancy  
 
 ```{r}
 basicCN + geom_boxplot(notch=TRUE,outlier.color = "red") + stat_boxplot(geom ='errorbar') + labs(title="Fancy notch boxplot \n with 2 lines")
 ```
+
+The box plot shows that the seats in the back consume the most amount of alcohol by a large amount. Between the front and middle, there is very little difference.
 
 ## Numerical Summarys 
 
