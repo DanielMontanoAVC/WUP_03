@@ -28,7 +28,7 @@ The response variable is numerical and the explanatory variable is categorical. 
 
 ## Results
 
-### Graphical results
+## Graphical results
 
 ### Now with ggplot - first select the basic data
 
@@ -41,7 +41,7 @@ basicCN <- ggplot(davisdata,aes(y=alcohol,x=Seat))
 basicCN + geom_boxplot()
 ```
   
-  The box plot shows that the back seats drink the most alcohol. Between the front and middle seats, there is very little diffrence
+  The box plot shows that the back seats drink the most alcohol. Between the front and middle seats, there is very little difference
   
 ### get fancy  
 
@@ -52,6 +52,13 @@ basicCN + geom_boxplot(notch=TRUE,outlier.color = "red") + stat_boxplot(geom ='e
 The box plot shows that the seats in the back consume the most amount of alcohol by a large amount. Between the front and middle, there is very little difference.
 
 ## Numerical Summarys 
+
+
+```{r}
+favstats(alcohol~Seat,data=davisdata)
+```
+
+The data shows that the mean and median of alcohol consumed is about three times more than the middle row and eight times more than the front seats. The back seats drink more alcohol than both middle and front seats combined
 
 ## Inferential Tests
 
